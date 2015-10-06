@@ -3,8 +3,16 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   </head>
-  <body>
-    <h2>Hello world, this Django 1.8</h2>
+  <body class="container">
+    <h2>{{hello_message}}, this Django 1.8</h2>
+    <form class="form" action="" method="POST" accept-charset="utf-8">
+      {%csrf_token%}
+      {{form.as_p}}
+    <p>
+      <input type="submit" name="name" value="Register">
+    </p>
+    </form>
   </body>
 </html>
