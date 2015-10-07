@@ -13,3 +13,15 @@ class StudentForm(forms.ModelForm):
             raise forms.ValidationError("You may be too young for this class")
         return age
         #return lambda x: x <= 11 and x >= 121, age
+
+class FeedbackForm(forms.Form):
+    full_name = forms.CharField()
+    email = forms.EmailField()
+    message = forms.CharField()
+
+    def clean_message(self):
+        message = self.cleaned_data.get('message')
+        if message == 'Dirty':
+            message == 'Clean'
+        print(message)
+        return message
