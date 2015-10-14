@@ -6,12 +6,24 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   </head>
   <body class="container">
-    <p>
+    <table class="table">
+      <tr>
+        <th>Fullname</th>
+        <th>Age</th>
+        <th>Email</th>
+        <th>Interests</th>
+        <th>Last Updated</th>
+      </tr>
       {% for student in students %}
-          <li>{{student.full_name}}</li>
-        </ul>
+      <tr>
+          <td>{{forloop.counter}}</td>
+          <td>{{student.full_name}}</td>
+          <td>{{student.age}}</td>
+          <td>{{student.email}}</td>
+          <td>{{student.interests}}</td>
+          <td>{{student.last_update |timesince}}</td>
+      </tr>
       {% endfor %}
-      {# {{students}}#}
-    </p>
+    </table>
   </body>
 </html>
