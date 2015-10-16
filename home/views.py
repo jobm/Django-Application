@@ -5,6 +5,8 @@ from .forms import FeedbackForm
 from .models import Student
 # Create your views here.
 def index(request):
+    return render(request,'main_index.html',{})
+def register(request):
     form = StudentForm(request.POST or None)
     # print (request.POST)
     context = {
