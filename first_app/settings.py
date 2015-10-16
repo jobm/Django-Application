@@ -27,6 +27,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+EMAIL_HOST = 'smtp.mandrillapp.com'
+EMAIL_HOST_USER = 'jobmwaniki18@gmail.com'
+EMAIL_HOST_PASSWORD = 'GX0d8t1mVJPZ5xBrI8RXsA'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 
 # Application definition
 
@@ -112,3 +117,5 @@ STATICFILES_DIRS = (
 )
 ACCOUNT_ACTIVATION_DAYS = 7
 REGISTRATION_AUTO_LOGIN = True
+LOGIN_REDIRECT_URL = '/students'
+SITE_ID = 1
